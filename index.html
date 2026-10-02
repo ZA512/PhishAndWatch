@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b51c27">
+  <meta name="description" content="Phish & Watch : un jeu LCD rétro. Attrapez les phishing, laissez passer les bons emails.">
+  <title>Phish & Watch — Le jeu LCD</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="src/engine.js"></script>
+  <script defer src="src/screen.js"></script>
+  <script defer src="src/main.js"></script>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <span class="edition"><i></i> CYBER SECURITY · POCKET GAME</span>
+      <span class="edition-number">ÉDITION 01 / 1982</span>
+    </header>
+
+    <section class="console" aria-label="Console Phish & Watch">
+      <div class="faceplate">
+        <div class="console-title"><span></span><h1>PHISH &amp; WATCH</h1><span></span></div>
+        <div class="case-print"><b>CYBER<br>SECURITY<br>GAME</b>
+          <svg viewBox="0 0 80 70" aria-hidden="true"><path d="M19 18 70 10 65 55 14 62Z M20 19 41 39 69 11 M3 33 14 31 M0 43 12 41 M4 53 10 52"/></svg>
+        </div>
+        <div class="screen-bezel">
+          <div class="screen-glass">
+            <svg id="lcd" viewBox="0 0 960 450" role="img" aria-label="Écran de jeu : quatre voies d’emails et un personnage avec un filet"></svg>
+            <div id="screen-overlay" class="screen-overlay">
+              <div class="overlay-card">
+                <span class="overlay-eyebrow" id="overlay-eyebrow">PRÊT À PRENDRE LA RELÈVE ?</span>
+                <h2 id="overlay-title">À vos filets.</h2>
+                <p id="overlay-text">Attrapez les phishing.<br>Laissez passer les bons emails.</p>
+                <button id="start-button" class="start-button">JOUER · GAME A <span>↵</span></button>
+                <span id="overlay-hint" class="overlay-hint">GAME A · EASY / GAME B · HARD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="console-controls">
+          <div class="direction-control left-control">
+            <button class="round-button" id="left-button" aria-label="Déplacer le personnage vers la gauche"></button>
+            <span class="direction-arrow">⬅</span><b>LEFT</b>
+          </div>
+          <div class="mode-panel">
+            <div class="mode-control"><button id="game-a" class="mode-button" aria-label="Démarrer Game A, Easy, mode facile" aria-pressed="true"></button><b>GAME A<span class="mode-difficulty">EASY</span></b></div>
+            <span class="panel-divider"></span>
+            <div class="mode-control"><button id="game-b" class="mode-button" aria-label="Démarrer Game B, Hard, mode difficile" aria-pressed="false"></button><b>GAME B<span class="mode-difficulty">HARD</span></b></div>
+          </div>
+          <div class="direction-control right-control">
+            <button class="round-button" id="right-button" aria-label="Déplacer le personnage vers la droite"></button>
+            <span class="direction-arrow">➡</span><b>RIGHT</b>
+          </div>
+        </div>
+        <span class="case-serial">PW–01 · LCD ELECTRONIC GAME</span>
+      </div>
+    </section>
+
+    <section class="game-guide" aria-label="Règles et commandes">
+      <div class="rule-item"><svg viewBox="0 0 44 34" aria-hidden="true"><rect x="3" y="5" width="38" height="25" rx="1"/><path d="m4 6 18 14L40 6 M4 29l12-10m24 10L28 19"/><path class="skull-fill" d="M22 11c-5 0-8 3-8 7 0 3 2 5 4 6v3h8v-3c2-1 4-3 4-6 0-4-3-7-8-7"/><circle class="eye" cx="19" cy="18" r="1.8"/><circle class="eye" cx="25" cy="18" r="1.8"/></svg><p><strong>Phishing ? Attrapez.</strong><span>Un crâne sur l’enveloppe : +1 point.</span></p></div>
+      <div class="rule-item"><svg viewBox="0 0 44 34" aria-hidden="true"><rect x="3" y="5" width="38" height="25" rx="1"/><path d="m4 6 18 14L40 6 M4 29l12-10m24 10L28 19"/></svg><p><strong>Bon email ? Laissez passer.</strong><span>Trois erreurs et la partie est terminée.</span></p></div>
+      <div class="keyboard-guide"><div><kbd>←</kbd><kbd>→</kbd><span>ou A / D</span></div><span>4 positions · interception automatique</span></div>
+    </section>
+    <footer class="page-footer">
+      <span id="record">RECORD A <b>000</b> <span class="record-divider">/</span> RECORD B <b>000</b></span>
+      <div class="utility-controls"><button id="pause-button" disabled>Ⅱ PAUSE <span>P</span></button><button id="sound-button" aria-pressed="true">♪ SON ACTIVÉ</button></div>
+    </footer>
+    <p id="status" class="sr-only" role="status" aria-live="polite">Choisissez Game A ou Game B pour commencer.</p>
+    <aside id="debug-panel" hidden><button id="segments-button">Afficher tous les segments (L)</button><pre id="debug-output"></pre></aside>
+  </main>
+</body>
+</html>
