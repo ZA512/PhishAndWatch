@@ -2,6 +2,8 @@
 
 Un jeu LCD rétro inspiré des références dans `docs/PRD.md`. HTML, CSS et JavaScript, sans dépendance, sans compilation ni backend.
 
+![Aperçu de la console Phish & Watch avec les modes Easy et Hard](docs/PhishAndWatch.png)
+
 ## Jouer
 
 Ouvrir `index.html` dans un navigateur, ou lancer `python -m http.server 8765 --bind 127.0.0.1` dans ce dossier et visiter `http://127.0.0.1:8765`.
